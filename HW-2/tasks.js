@@ -160,7 +160,6 @@ if (!isNumericItems(triangleSides)) {
         console.groupEnd();
     }
 }
-33
 
 
 
