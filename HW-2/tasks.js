@@ -105,7 +105,7 @@ if (isAdult > 18) {
 } */
 
 
-//todo: task 6 ➕➖
+//todo: task 6 ✅
 /* 6. Користувач вводить три довжини сторін трикутника (використовуйте prompt () три рази для введення кожної сторони).
 Необхідно 
 	a) визначити і вивести в консоль площу трикутника 
@@ -120,9 +120,6 @@ const sideC = prompt("3. Enter triangle third side length");
 triangleSides.push(sideA, sideB, sideC);
 //console.log('triangleSides: ', triangleSides);
 
-let sumOfSidesLength = 0;
-
-//!iterator only 1st element
 const isNumericItems = (array) => {
     const regExp = /[0-9]/;
     let result;
@@ -138,33 +135,32 @@ const isNumericItems = (array) => {
     return result;
 };
 
-console.log("FOO", isNumericItems(triangleSides));
-
 if (!isNumericItems(triangleSides)) {
-    console.log("Incorrect data");
+    console.log("%ctask 6:", LOGGING_STYLES, "Incorrect data");
 } else {
-    sumOfSidesLength = triangleSides.reduce((prev, curr) => +prev + +curr, 0);
-    console.log('sumOfSidesLength: ', sumOfSidesLength);
+    const sumOfSidesLength = triangleSides.reduce((prev, curr) => +prev + +curr, 0);
+    //console.log('sumOfSidesLength: ', sumOfSidesLength);
 
     const semiperimeter = sumOfSidesLength / 2;
     const area = Math.sqrt(semiperimeter * (semiperimeter - sideA) * (semiperimeter - sideB) * (semiperimeter - sideC)).toFixed(3);
-    console.log("%ctask 6:", LOGGING_STYLES, "S =", area);
+    console.groupCollapsed("%ctask 6:", LOGGING_STYLES, )
+    console.log("S =", area);
 
-    //todo: find longest side ✅
     const longestSide = triangleSides.reduce((prev, curr) => prev > curr ? prev : curr);
-    console.log('longestSide: ', longestSide);
+    //console.log('longestSide: ', longestSide);
 
-    //todo:  longest2 = a2 + b2; 
     const otherSides = triangleSides.filter(element => element < longestSide);
-    console.log('otherSides: ', otherSides);
+    //console.log('otherSides: ', otherSides);
 
-    const sumOfSquareOtherSides = Math.pow(otherSides[0], 2) + Math.pow(otherSides[1], 2);
-    console.log('sumOfOtherSides: ', sumOfSquareOtherSides);
+    const sumOfSquareOtherSides = otherSides.map(side => Math.pow(side, 2)).reduce((prev, curr) => prev + curr, 0);
+    //console.log('sumOfSquareOtherSides: ', sumOfSquareOtherSides);
 
     if (Math.pow(longestSide, 2) === sumOfSquareOtherSides) {
         console.log("The triangle is right-angled");
+        console.groupEnd();
     }
 }
+33
 
 
 
