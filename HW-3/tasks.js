@@ -84,7 +84,7 @@ powerInputElement.addEventListener("change", (event) => {
 
 formElement.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (numberValue % 1 !== 0 || powerValue % 1 !== 0) {
+    if (numberValue % 1 !== 0 || powerValue % 1 !== 0) { //Number.isInteger(numberValue) + add this check to func
         alert("Please, enter an integer");
     } else {
         console.log("%ctask 4", LOGGING_STYLES, raiseToDegree(numberValue, powerValue));
@@ -99,6 +99,7 @@ findMin(12, 14, 4, -4, 0.2); // => -4 */
 
 const findMin = (...arguments) => {
     return arguments.reduce((prev, curr) => prev < curr ? prev : curr);
+    // or Math.min(...arguments)
 };
 
 console.log("%ctask 5", LOGGING_STYLES, findMin(12, 14, 4, -4, 0.2));
@@ -111,7 +112,12 @@ findUnique([1, 2, 3, 5, 11]); // => true */
 
 const findUnique = (arr) => {
     return arr.some((element, index) => arr.indexOf(element) !== index) ? false : true;
+
+    //or new Set(arr); return new Set(arr).size === arr.length
+    //collection like Set store only uniq items
 };
+
+
 
 console.groupCollapsed("%ctask 6", LOGGING_STYLES);
 console.log('findUnique([1, 2, 3, 5, 3]): ', findUnique([1, 2, 3, 5, 3]));
@@ -129,7 +135,7 @@ console.log(lastElem([3, 4, 10, -5],8));   // [3, 4, 10, -5] */
 
 const getLastElements = (array, number) => {
     if (!number) {
-        return array.pop();
+        return array.pop(); //or slice(-1);
     } else {
         return array.slice(-number);
     }
