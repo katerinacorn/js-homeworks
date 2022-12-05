@@ -92,7 +92,7 @@ console.log("Current course: " + stud1.showCourse());
 console.groupEnd();
 
 
-//todo: task 4 ➕➖
+//todo: task 4 ✅
 /* 4. Створіть клас Worker який буде мати конструктор, який приймає наступні властивості: fullName (ім’я і прізвище), dayRate (ставка за день роботи), workingDays (кількість відпрацьованих днів).
    1. клас повинен мати метод showSalary(), який буде виводити зарплату працівника. Зарплата - це добуток ставки dayRate на кількість відпрацьованих днів workingDays.
    2. додати приватне поле experience і присвоїти йому значення 1.2 і використовувати його як додатковий множник при визначенні зарплати – створити метод showSalaryWithExperience(). Вивести значення зарплати з цим коефіцієнтом.
@@ -101,7 +101,6 @@ console.groupEnd();
    5. Створити кілька екземплярів класу (працівників) з різними зарплатами, як показано в прикладі нижче. Посортувати зарплату працівників із найбільшим experience по зростанню і вивести результат в форматі: worker_fullName: salary_value
    6. Реалізувати динамічне сортування для будь-кої кількості працівників-екземплярів класу Worker.
  */
-
 class Worker {
     #experience = 1.2;
 
@@ -141,11 +140,11 @@ console.groupEnd();
 let worker2 = new Worker("Tom Tomson", 20, 22);
 worker2.setExperience = 2.7;
 let worker3 = new Worker("Andy Ander", 20, 23);
+let worker4 = new Worker("Joel Joelson", 20, 23);
 
-//todo:Створити кілька екземплярів класу (працівників) з різними зарплатами, як показано в прикладі нижче. Посортувати зарплату працівників із найбільшим experience по зростанню і вивести результат в форматі: worker_fullName: salary_value 6. Реалізувати динамічне сортування для будь-кої кількості працівників-екземплярів класу Worker.
 
 const workers = [];
-workers.push(worker1, worker2, worker3);
+workers.push(worker1, worker2, worker3, worker4);
 console.log('workers: ', workers);
 
 workers.sort((a, b) => a.getExperience - b.getExperience).forEach((worker) =>
@@ -169,7 +168,6 @@ workers.sort((a, b) => a.getExperience - b.getExperience).forEach((worker) =>
    const figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
         console.log(handleFigures(figures));
 */
-
 class GeometricFigure {
     getArea() {
         return 0;
