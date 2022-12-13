@@ -1,0 +1,9 @@
+.header_big {
+    background-color: #88dd88;
+    font-size: 38px;
+}
+
+.horizontal {
+    display: flex;
+    list-style: none;
+}
