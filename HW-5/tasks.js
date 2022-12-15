@@ -108,6 +108,7 @@ class Worker {
         this.fullName = fullName;
         this.dayRate = dayRate;
         this.workingDays = workingDays;
+        //workers.push(this);
     }
 
     get getExperience() {

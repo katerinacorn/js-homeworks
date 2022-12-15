@@ -1,7 +1,6 @@
 const LOGGING_STYLES = "background: navy; padding: 5px; font-weight: bold;";
 
 //todo: task 1 ✅
-
 //*1:
 /* const firstDiv = document.getElementById("test");
 firstDiv.textContent = "Last"; */
@@ -19,13 +18,12 @@ imageElement.setAttribute("src", "cat.jpg");
 
 
 //todo: task 3 ✅
-
 const allElementsInDiv = document.querySelectorAll("#text>p");
 allElementsInDiv.forEach((item, index) => {
     console.log(`Selector text ${index}: ${item.textContent}`)
-})
+});
 
-//todo: task 4 ➕ //todo second var
+//todo: task 4 ✅
 const listElement = document.getElementById("list");
 
 /* const first = listElement.firstElementChild;
@@ -75,7 +73,6 @@ field1.value = prompt("Enter 1 value");
 field2.value = prompt("Enter 2 value");
 
 [field1.value, field2.value] = [field2.value, field1.value]; */
-
 
 
 //todo: task 7 ✅
