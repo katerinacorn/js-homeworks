@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
 .header_big {
     background-color: #88dd88;
     font-size: 38px;
@@ -6,4 +13,11 @@
 .horizontal {
     display: flex;
     list-style: none;
+}
+
+
+.styled {
+    color: orange;
+    font-size: 20px;
+    font-family: 'Comic Neue';
 }
