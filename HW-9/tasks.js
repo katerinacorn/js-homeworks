@@ -27,14 +27,6 @@ $(() => {
 
     })
 
-    //or
-    $()
-
-    (function relocate() {
-
-
-    }());
-
 
     //todo: task 4 ✅
     $("#form").change(() => {
