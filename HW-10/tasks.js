@@ -39,16 +39,15 @@ console.log(mul(1, "str", 2, 3, true)); // 6
 console.log(mul(null, "str", false, true)); // 0
 
 
-//todo: task 4  ---
+//todo: task 4 ✅
 let server = {
     data: 0,
 
-    convertToString: callback => {
-        callback((() => {
+    convertToString: function (callback) {
+        callback(() => {
             return this.data + "";
-        }).bind(this));
+        });
     }
-
 
     /* convertToString: function (callback) {
         callback((function () {
@@ -61,17 +60,16 @@ let client = {
     server: server,
     result: "",
 
-    calc: data => {
+    calc: function (data) {
         this.server.data = data;
         this.server.convertToString(this.notification());
     },
 
-    notification: () => {
-        return (() => {
+    notification: function () {
+        return ((callback) => {
             this.result = callback();
-        }).bind(this)
+        });
     },
-
 
     /* calc: function (data) {
         this.server.data = data;
@@ -83,9 +81,9 @@ let client = {
          }).bind(this);
      } */
 };
-/* client.calc(123);
+client.calc(123);
 console.log(client.result); // "123"
-console.log(typeof client.result); // "string" */
+console.log(typeof client.result); // "string"
 
 //Змініть код використовуючи стрілкові функції, щоб в коді не використовувалися методи bind().
 

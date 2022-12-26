@@ -1,5 +1,3 @@
-const LOGGING_STYLES = "background: navy; padding: 5px; font-weight: bold;";
-
 $(() => {
     //todo: task 1 ✅
     const url = $(".link").attr("href");
@@ -12,21 +10,14 @@ $(() => {
     $(".head").css("background-color", "green");
     $(".inner").css("font-size", "35px");
 
-    //todo: task 3 ---
-    const el = $("h3");
-    $("h3").next().css("background-color", "blue") //.insertBefore(el)
+    //todo: task 3 ✅
+    $("h3").next().css("background-color", "blue");
 
     $("div").each((index, element) => {
-        //todo
         if ($(element).prev()[0].nodeName === "H3") {
-            console.log('$("div").prev(): ', $("div").prev());
-            //$(element).insertBefore("h3")
             $(element).prev().before(element);
-
         }
-
-    })
-
+    });
 
     //todo: task 4 ✅
     $("#form").change(() => {
